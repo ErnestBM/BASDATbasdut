@@ -1,5 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.db import connection, InternalError
+from psycopg2 import cursor
+
+
 
 # Create your views here.
 
@@ -28,21 +31,37 @@ def login(request):
         #     return redirect('/dashboard')     
         # else:
         #     messages.info(request,'Username atau Password salah')
-
-    context = {}
-    return render(request, 'login.html', context)
+    conn = psycopg2.connect(DATABASES)
+    cursor.execute("SELECT * FROM TIM")
+    Tim = cursor.fetchall()
+    context = {'tim': Tim, 'test': "test mek"}
+    return render(request, 'authentication.html', context)
 
 def convert(cursor):
     columns = [col[0] for col in cursor.description]
     return [dict(zip(columns, row)) for row in cursor.fetchall()]
 
-def show_login(request):
-    print('ee')
-    cursor = connection.cursor()
-    cursor.execute("set search_path to SEPAKBOLA;")
-    cursor.execute('SELECT * FROM TIM;')
-    res = convert(cursor)
-    print('rhdehd')
-    print(res)
+# def show_login(request):
+#     # print('ee')
+#     # cursor = connection.cursor()
+
+#     # res = convert(cursor)
+#     # print('rhdehd')
+#     # print(res)
+#     context = {}
+#     return render(request, "login.html", context)
+
+def show_authentication(request):
     context = {}
-    return render(request, "login.html", context)
+    return render(request, "authentication.html", context)
+
+def show_register(request):
+    return render(request, "register.html")
+def show_register_panitia(request):
+    return render(request, "register_panitia.html")
+def show_register_lain(request):
+    return render(request, "register_lain.html")
+    
+def logout(request):
+    request.session.flush()
+    return redirect('/')
