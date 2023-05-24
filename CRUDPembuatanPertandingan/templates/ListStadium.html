@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <h1>Panitia</h1>
+
+            <div class="menu">
+                <a href="#">Dashboard</a>
+                <a href="#">Rapat</a>
+                <a href="#" class="is-active">Manage Pertandingan</a>
+                <a href="#">Logout</a>
+            </div>
+
+            <button class="hamburger">
+                <span class="material-icons">menu</span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        
+    </nav>
+
+    <div class="menu">
+        <a href="#" class="is-active">Dashboard</a>
+        <a href="#">Rapat</a>
+        <a href="#">Manage Pertandingan</a>
+        <a href="#">Logout</a>
+    </div>
+
+    <table>
+        <tr>
+            <th colspan="5">List Waktu Stadium</td>
+        </tr>
+        <tr>
+            <th>List Waktu</th>
+            <th>Action</th>
+        </tr>
+        <tr>
+            <td>11.00 - 13.00 </td>
+            <td>Dipesan </td>
+        </tr>
+        <tr>
+            <td>07.00 - 09.00  </td>
+            <td>
+                <input type="button" class="btn" value="Next">
+                <button><a href="{% url 'CRUDPemilihanStadium:show_list_stadium'%}">Next</a></button>
+            </td>
+        </tr>
+      </table>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
