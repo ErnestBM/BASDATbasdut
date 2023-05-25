@@ -93,6 +93,6 @@ def show_isi_rapat(request):
             }
             return render(request, "isi_rapat.html", context)
         else:
-            return HttpResponseRedirect(reverse('example_app:index'))
+            return HttpResponseRedirect(reverse('index.html'))
     else:
-        return HttpResponseRedirect(reverse('example_app:index'))
+        return HttpResponseRedirect(reverse('index.html'))

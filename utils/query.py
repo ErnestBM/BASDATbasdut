@@ -8,8 +8,7 @@ try:
     connection = psycopg2.connect(user="postgres",
                         password="HbBv4Y89Ou3MOwHziV4Z",
                         host="containers-us-west-97.railway.app",
-                        port="6458",
-                        database="db22a002")
+                        port="6458")
 
     # Create a cursor to perform database operations
     cursor = connection.cursor()
