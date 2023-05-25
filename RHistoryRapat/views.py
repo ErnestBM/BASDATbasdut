@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from queries import *
+from .queries import *
 
 def show_list_rapat(request):
     rapat_data = get_rapat_data()

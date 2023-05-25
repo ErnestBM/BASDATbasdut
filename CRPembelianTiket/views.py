@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render
-from queries import *
+from .queries import *
 from authentication.views import *
 # Create your views here.
 
@@ -34,7 +34,7 @@ def show_beli_tiket(request, id_pertandingan):
     if request.method == 'POST':
         jenis_tiket = request.POST.get('jenis_tiket')
         jenis_pembayaran = request.POST.get('jenis_pembayaran')
-        id_penonton = get_logged_in_user_id()
+        id_penonton = 1234
 
         insert_pembelian_tiket(id_penonton, jenis_tiket, jenis_pembayaran, id_pertandingan)
         
