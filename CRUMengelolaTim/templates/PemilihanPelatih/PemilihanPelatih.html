@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <h1>Manajer</h1>
+
+            <div class="menu">
+                <a href="/manajer">Dashboard</a>
+                <a href="/manajer/mengelola-tim" class="is-active">Mengelola Tim</a>
+                <a href="/manajer/peminjaman-stadium">Peminjaman Stadium</a>
+                <a href="/manajer/list-pertandingan">List Pertandingan</a>
+                <a href="/manajer/histry-rapat">History Rapat</a>
+                <a href="/manajer/logout">Logout</a>
+            </div>
+
+            <button class="hamburger">
+                <span class="material-icons">menu</span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        
+    </nav>
+
+    <div class="mobile-menu">
+        <a href="/manajer">Dashboard</a>
+        <a href="/manajer/mengelola-tim" class="is-active">Mengelola Tim</a>
+        <a href="/manajer/peminjaman-stadium">Peminjaman Stadium</a>
+        <a href="/manajer/list-pertandingan">List Pertandingan</a>
+        <a href="/manajer/histry-rapat">History Rapat</a>
+        <a href="/manajer/logout">Logout</a>
+    </div>
+
+    <div class="select-container">
+
+        <h1>Daftar Pelatih</h1>
+
+        <div>
+            <label for="selector">Pelatih yang mau didaftarkan : </label>
+            <select class="classic" id="selector">
+                <option>Xavier Hernández - Teknik</option>
+                <option>Mikel Arteta - Strategi Serang</option>
+                <option>Arsene Wenger - Strategi Bertahan</option>
+            </select>
+        </div>
+
+        <input type="submit" class="btn"value="Submit">
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

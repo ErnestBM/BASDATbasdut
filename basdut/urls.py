@@ -18,7 +18,12 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+<<<<<<< HEAD
     path('mulaiTanding/', include('CRDMulaiPertandingan.urls')),
     path('manageTanding/', include('RManagePertandingan.urls')),
     path('pembuatanPertandingan/', include('CRUDPembuatanPertandingan.urls')),
+=======
+    path('', include('authentication.urls')),
+    path('', include('mulai_rapat.urls'))
+>>>>>>> b901deae7205c13bb35304737cc35d432220d7e9
 ]
