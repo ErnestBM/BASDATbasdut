@@ -13,13 +13,13 @@
 
     <nav>
         <div class="container">
-            <h1>Panitia</h1>
+            <h1>Penonton</h1>
 
             <div class="menu">
                 <a href="#" class="is-active">Dashboard</a>
-                <a href="#">Rapat</a>
-                <a href="#">Manage Pertandingan</a>
-                <a href="#">Logout</a>
+                <a href="#">Pembelian Tiket</a>
+                <a href="#">List Pertandingan</a>
+                <a href="{% url 'authentication:logout'%}">Logout</a>
             </div>
 
             <button class="hamburger">
@@ -28,19 +28,14 @@
                 <span></span>
             </button>
         </div>
+        
     </nav>
-    
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
 
     <div class="mobile-menu">
         <a href="#" class="is-active">Dashboard</a>
-        <a href="#">Rapat</a>
-        <a href="#">Manage Pertandingan</a>
-        <a href="#">Logout</a>
+        <a href="#">Pembelian Tiket</a>
+        <a href="#">List Pertandingan</a>
+        <a href="{% url 'authentication:logout'%}">Logout</a>
     </div>
 
     <div class="row">
@@ -51,13 +46,12 @@
                 <p>Email</p>
                 <p>Alamat</p>
                 <p>Status</p>
-                <p>Jabatan</p>
               </div>
         </div>
         <div class="column">
             <div class="table-card">
-                <h3>Daftar Rapat</h3>
-                <p>Belum ada rapat</p>
+                <h3>Daftar Pertandingan</h3>
+                <p>Belum memesan pertandingan</p>
                 <p></p>
               </div>
         </div>
