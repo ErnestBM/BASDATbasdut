@@ -42,13 +42,13 @@
 
     <table>
         <tr>
-            <td colspan="8">Tim</td>
+            <td colspan="9">{{nama_tim}}</td>
         </tr>
         <tr>
-            <td colspan="8">Pemain</td>
+            <td colspan="9">Pemain</td>
         </tr>
         <tr>
-            <th>Nama Pemain</th>
+            <th colspan="2">Nama Pemain</th>
             <th>No HP</th>
             <th>Tanggal Lahir</th>
             <th>Is Captain</th>
@@ -57,45 +57,44 @@
             <th>Jenjang</th>
             <th>Action</th>
         </tr>
+        {% for datas in pemain_data %}
+            <tr>
+                {% for data in datas %}
+                    <td>{{data}}</td>
+                {% endfor %}
+                <td>
+                    <a href="#">Make Captain</a>
+                    <a href="#">Delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+      </table>
+      <table class="table_pelatih">
         <tr>
-            <td>Marcus Reus</td>
-            <td>081234567891</td>
-            <td>31-06-2003</td>
-            <td>false</td>
-            <td>Forward</td>
-            <td>2108397711</td>
-            <td>S1</td>
-            <td>
-                <a href="#">Make Captain</a>
-                <a href="#">Delete</a>
-            </td>
+            <td colspan="9">Pelatih</td>
         </tr>
         <tr>
-            <td colspan="8">Pelatih</td>
-        </tr>
-        <tr>
-            <th>Nama Pelatih</th>
+            <th colspan="2">Nama Pelatih</th>
             <th>No HP</th>
             <th>Email</th>
-            <th colspan="2">Alamat</th>
-            <th colspan="2">Spesialisasi</th>
+            <th colspan="1">Alamat</th>
+            <th colspan="1">Spesialisasi</th>
             <th>Action</th>
         </tr>
-        <tr>
-            <td>Zinedine Zidane</td>
-            <td>081081081081</td>
-            <td>zinedinezidane@gmail.com</td>
-            <td colspan="2">Pesona Khayangan</td>
-            <td colspan="2">Teknik</td>
-            <td>
-                <a href="#">Make Captain</a>
-                <a href="#">Delete</a>
-            </td>
-        </tr>
+        {% for datas in pelatih_data %}
+            <tr>
+                {% for data in datas %}
+                    <td>{{data}}</td>
+                {% endfor %}
+                <td>
+                    <a href="#">Delete</a>
+                </td>
+            </tr>
+        {% endfor %}
       </table>
       <div class="pemain-pelatih">
-        <a class="pemain-button" href="#">Pemain</a>
-        <a class="pelatih-button" href="#">Pelatih</a>
+        <a class="pemain-button" href="pemilihanpemain/">Pemain</a>
+        <a class="pelatih-button" href="pemilihanpelatih/">Pelatih</a>
       </div>
 
 </body>
@@ -137,6 +136,10 @@
         text-align: center;
         border-spacing: 0px;
     }
+
+    .table_pelatih {
+        margin-top: -100px;
+    }
     
     table, th, td {
         border: 1px solid;
@@ -147,6 +150,8 @@
     }
     
     .pemain-pelatih {
+        margin-top: -60px;
+        margin-bottom: 20px;
         text-align: center;
     }
     
