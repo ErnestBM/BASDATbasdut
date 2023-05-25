@@ -38,7 +38,7 @@ def show_tim_form(request):
     return render(request, "TimRegis/TimRegis.html")
 
 def show_dashboard_manajer(request):
-    return render(request, 'DashboardManager/DarhBoard.html')
+    return render(request, 'DashboardManager/DashBoard.html')
         
 
 def register_tim(request):
