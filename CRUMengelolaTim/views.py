@@ -269,7 +269,7 @@ def pemilihan_pelatih(request):
             "pelatih_data" : pelatih_data,
         }
     
-    return render(request, "PemilihanPemain/PemilihanPelatih.html", context)
+    return render(request, "PemilihanPelatih/PemilihanPelatih.html", context)
     
     
     
