@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="mains.css">
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <h1>Panitia</h1>
+
+            <div class="menu">
+                <a href="#">Dashboard</a>
+                <a href="#" class="is-active">Rapat</a>
+                <a href="#">Manage Pertandingan</a>
+                <a href="#">Logout</a>
+            </div>
+
+            <button class="hamburger">
+                <span class="material-icons">menu</span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        
+    </nav>
+
+    <div class="menu">
+        <a href="#">Dashboard</a>
+        <a href="#" class="is-active">Rapat</a>
+        <a href="#">Manage Pertandingan</a>
+        <a href="#">Logout</a>
+    </div>
+
+    <table>
+        <tr>
+            <th colspan="5">Pilih Pertandingan</td>
+        </tr>
+        <tr>
+            <th>Tim Bertanding</th>
+            <th>Stadium </th>
+            <th>Tanggal dan Waktu </th>
+            <th>Action</th>
+        </tr>
+        <tr>
+            <td>A vs B</td>
+            <td>Stadium GBK </td>
+            <td>5 Juli 2023, 07.00 - 09.00 </td>
+            <td>
+                <a class="laporan-button" href="{% url 'show_isi_rapat'%}">Mulai Rapat</a> 
+            </td>
+        </tr>
+        <tr>
+            <td>C vs D </td>
+            <td>Stadium GBK </td>
+            <td>7 Juli 2023, 13.00 - 15.00  </td>
+            <td>
+                <a class="laporan-button" href="{% url 'show_isi_rapat'%}">Mulai Rapat</a> 
+            </td>
+        </tr>
+      </table>
+
+    <script src="main.js"></script>
+</body>
+</html>

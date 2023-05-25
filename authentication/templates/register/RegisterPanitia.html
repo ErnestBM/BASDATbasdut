@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Registrasi</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        :root {
+    --primary: #8c38ff;
+    --light: #EEEEEE;
+    --dark: #212121;
+}
+*{
+    margin: 20;
+    padding: 30;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+body{
+    width: 100%;
+    background: #f3f3f4;
+}
+
+.container{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    max-width: 530px;
+    max-height: 800px;
+    width:100%;
+    height: 37%;
+    background:#8c38ff;
+    border-radius: 0px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+}
+
+.container .registration{
+    display: none;
+}
+
+#check:checked ~ .registration{
+    display:block;
+}
+#check:checked ~ .login{
+    display: none;
+}
+
+#check{
+    display:none;
+}
+
+.container .form{
+    padding:2rem;
+}
+
+.form header{
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom:1.5rem;
+}
+
+.form input{
+    height:60px;
+    width:100%;
+    padding: 0 15px;
+    font-size:17px;
+    margin-bottom: 1.3 rem;
+    border: 1px solid #dddd;
+    border-radius: 6px;
+    outline:none;
+}
+
+.form input:focus{
+    box-shadow: 0 qpx 0 rgba(0,0,0,0.3);
+}
+
+.form a{
+    font-size:16px;
+    color:#8c38ff;
+    text-decoration: none;
+}
+
+.form a:hover{
+    text-decoration: underline;
+
+}
+
+.form input .button{
+    color:#f3f3f4;
+    background: #8c38ff;
+    font: size 1.2rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-top: 1.7rem;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.form input .button:hover{
+    background: #8c38ff;
+
+}
+    </style>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Form Registrasi</h2>
+        <form method="POST" action="/register/panitia/submit/">
+            {% csrf_token %}
+
+            <div class="user-box">
+                {% if messages %}
+                {{ messages }} <br>
+                {% endif %}
+                <label>Username</label>
+                <input type="text" name="username" required="" placeholder="Please Input Username
+                ">
+            </div>
+            <div class="user-box">
+				<label>Password</label>
+				<input type="password" name="password" required="" placeholder="Input Password">
+			</div>
+            <div class="user-box">
+				<label>Nama Depan</label>
+				<input type="firstname" name="nama_depan" required="" placeholder="Input First Name">
+			</div>
+            <div class="user-box">
+				<label>Nama Belakang</label>
+				<input type="lastname" name="nama_belakang" required="" placeholder="Input Last Name">
+			</div>
+            <div class="user-box">
+				<label>No HP</label>
+				<input type="phonenumber" name="phoneNumber" required="" placeholder="Input Phone Number">
+			</div>
+            <div class="user-box">
+				<label>Email</label>
+				<input type="email" name="email" required="" placeholder="Input Email">
+			</div>
+			<div class="user-box">
+				<label>Alamat</label>
+				<input type="alamat" name="address" required="" placeholder="Input Address">
+			</div>    
+            <div class="user-box">
+                <label>Status : </label>
+            <label for="option1">Mahasiswa</label>
+            <input type="checkbox" id="option1" name="status" value="mahasiswa">
+            <br>
+
+            <label for="option2">Dosen</label>
+            <input type="checkbox" id="option2" name="status" value="dosen">
+            <br>
+
+            <label for="option3">Tendik</label>
+            <input type="checkbox" id="option3" name="status" value="tendik">
+            <br>
+            
+            <label for="option4">Alumni</label>
+            <input type="checkbox" id="option4" name="status" value="alumni">
+            <br>
+    
+            <label for="option5">Umum</label>
+            <input type="checkbox" id="option5" name="status" value="umum">
+            <br>
+        </div> 
+        
+            <div class="user-box">
+				<label>Jabatan</label>
+				<input type="jabatan" name="jabatan" required="" placeholder="Input Jabatan">
+			</div>         
+            <button type="submit" >Submit</button>
+        </form>
+        </div>
+    </div>
+</body>
+
+</html>
