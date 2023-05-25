@@ -60,14 +60,19 @@ def show_dashboard_manajer(request):
     id_manajer = manajer_data[0]
     nama_tim = manajer_data[1]
     
-    cursor.execute(f"""
+    cursor.execute(f'''
                    SELECT *
-                   FROM TIM
-                   WHERE TIM.nama_tim='{nama_tim}';""")
-    tim_data = cursor.fetchall()
-    for row in tim_data:
-        print("Nama Tim: ", row[0])
-        print("Universitas: ", row[1])
+                   FROM NON_PEMAIN
+                   WHERE NON_PEMAIN.id='{id_manajer}'
+                   ''')
+    manajer_non_pemain = cursor.fetchall()
+    
+    cursor.execute(f'''
+                   SELECT *
+                   FROM STATUS_NON_PEMAIN
+                   WHERE STATUS_NON_PEMAIN.id_non_pemain='{id_manajer}'
+                   ''')
+    status_non_pemain = cursor.fetchall()
         
     cursor.execute(f"""
                    SELECT *
@@ -115,10 +120,35 @@ def show_dashboard_manajer(request):
         "nama_tim" : nama_tim,
         "pemain_data" : x,
         "pelatih_data" : y,
+        "id" : manajer_non_pemain[0][0],
+        "nama": ('%s %s' % (manajer_non_pemain[0][1], manajer_non_pemain[0][2])),
+        "no_hp": manajer_non_pemain[0][3],
+        "email": manajer_non_pemain[0][4],
+        "alamat": manajer_non_pemain[0][5],
+        "status": status_non_pemain[0][1]
     }
     
     return render(request, 'DashboardManager/DashBoard.html', context)
+
+
+def get_manajer_non_pemain(request):
+    connection = connect()
+    cursor = connection.cursor()
+    
+    manajer_data = get_Manajer(request)
+    id_manajer = manajer_data[0]
+    nama_tim = manajer_data[1]
         
+    context = {
+        "id" : manajer_non_pemain[0],
+        "nama": '%s %s' % (manajer_non_pemain[1], manajer_non_pemain[2]),
+        "no_hp": manajer_non_pemain[3],
+        "email": manajer_non_pemain[4],
+        "alamat": manajer_non_pemain[5],
+        "status": status_non_pemain[0]
+    }
+    
+    return (context)
 
 def register_tim(request):
     connection = connect()

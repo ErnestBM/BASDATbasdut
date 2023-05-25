@@ -42,11 +42,11 @@
     <div class="row">
         <div class="column">
             <div class="profile-card">
-                <h3>Nama(depan&belakang)</h3>
-                <p>Nomor HP</p>
-                <p>Email</p>
-                <p>Alamat</p>
-                <p>Status</p>
+                <h3>{{nama}}</h3>
+                <h3>{{no_hp}}</h3>
+                <h3>{{email}}</h3>
+                <h3>{{alamat}}</h3>
+                <h3>{{status}}</h3>
               </div>
         </div>
         <div class="column">
@@ -108,7 +108,7 @@
         justify-content: space-between ;
     }
 
-    .column h3 {
+    .column h3{
         font-size: 16px;
         margin-top: -7px;
     }
@@ -280,10 +280,8 @@
     
     .profile-card h3 {
         padding-top: 10px;
-    }
-    
-    .profile-card p {
-        padding-top: 10%;
+        font-size: 20px;
+        margin-top: 10px;
     }
     
     .table-card {
