@@ -15,12 +15,12 @@
             <h1>Manajer</h1>
 
             <div class="menu">
-                <a href="#" class="is-active">Dashboard</a>
-                <a href="#">Mengelola Tim</a>
-                <a href="#">Peminjaman Stadium</a>
-                <a href="#">List Pertandingan</a>
-                <a href="#">History Rapat</a>
-                <a href="#">Logout</a>
+                <a href="/manajer" class="is-active">Dashboard</a>
+                <a href="/manajer/mengelola-tim">Mengelola Tim</a>
+                <a href="/manajer/peminjaman-stadium">Peminjaman Stadium</a>
+                <a href="/manajer/list-pertandingan">List Pertandingan</a>
+                <a href="/manajer/histry-rapat">History Rapat</a>
+                <a href="/logout">Logout</a>
             </div>
 
             <button class="hamburger">
@@ -62,3 +62,242 @@
     <script src="main.js"></script>
 </body>
 </html>
+
+<script>
+    const hamburger = document.querySelector('.hamburger');
+    const hamburger_icon = hamburger.querySelector('span');
+    const mobile_menu = document.querySelector('.mobile-menu')
+
+    hamburger.addEventListener('click', function() {
+        this.classList.toggle('is-active');
+
+        hamburger_icon.innerText = hamburger_icon.innerText === 'menu'
+                ? 'close'
+                : 'menu';
+        
+        mobile_menu.classList.toggle('is-open')
+    })
+</script>
+
+
+<style>
+    :root {
+        --primary: #8c38ff;
+        --light: #EEEEEE;
+        --dark: #212121;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    
+    .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding-left: 0;
+    
+        display: flex;
+        align-items: center;
+        justify-content: space-between ;
+    }
+    
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 99;
+        background-color: var(--dark);
+        padding: 16px 32px;
+        border-bottom: 3px solid var(--primary);
+    }
+    
+    h1 {
+        color: #FFF;
+        font-size: 20px;
+        font-weight: 900px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+    
+    .hamburger {
+        display: block;
+        position: relative;
+        z-index: 1;
+    
+        user-select: none;
+    
+        appearance: none;
+        border: none;
+        outline: none;
+        background: none;
+        cursor: pointer;
+    }
+    
+    .hamburger span {
+        display: block;
+        width: 33px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+    
+        background-color: var(--light);
+        border-radius: 6px;
+        z-index: 1;
+    
+        transform-origin: 0 0;
+    
+        transition: 0.4s;
+    }
+    
+    .hamburger:hover span:nth-child(2) {
+        transform: translateX(10px);
+        background-color: var(--primary);
+    }
+    
+    .hamburger.is-active span:nth-child(1) {
+        transform: translate(0px, -2px) rotate(45deg);
+    }
+    
+    .hamburger.is-active span:nth-child(2) {
+        opacity: 0;
+        transform: translateX(15px);
+    }
+    
+    .hamburger.is-active span:nth-child(3) {
+        transform: translate(-3px, 3px) rotate(-45deg);
+    }
+    
+    .hamburger.is-active:hover span {
+        background-color: var(--primary);
+    }
+    
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 98;
+    
+        padding-top: 6rem;
+        opacity: 0;
+        transform: translateY(-100%);
+        background-color: #000;
+        color: #FFF;
+        transition: 0.8s;
+    }
+    
+    .mobile-menu.is-open {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .mobile-menu a {
+        display: block;
+        padding: 1rem;
+        color: #FFF;
+        text-align: center;
+        text-decoration: none;
+        font-size: 1.25rem;
+        transition: 0.3s;
+    }
+    
+    .mobile-menu a:hover {
+        color: crimson;
+        background-color: #FFF;
+    }
+    
+    
+    .menu {
+        display: none;
+        flex: 1 1 0%;
+        justify-content: flex-end;
+        margin: 0 -16px;
+    }
+    
+    .menu a {
+        color: #FFF;
+        margin: 0 5px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: 0.4s;
+        padding: 8px 8px;
+        border-radius: 99px;
+    }
+    
+    .menu a.is-active, .menu a:hover {
+        background-color: var(--primary);
+    }
+    
+    .column {
+        display: grid;
+        justify-items: center;
+        float: left;
+        width: 50%;
+        padding: 0 10px;
+    }
+    
+    .row {
+        margin: 125px auto;
+    }
+    
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    
+    .profile-card {
+        width: 400px;
+        height: 400px;
+        text-align: center;
+        border: 1px solid;
+        box-shadow: 10px 10px 5px lightblue;
+    }
+    
+    .profile-card h3 {
+        padding-top: 10px;
+    }
+    
+    .profile-card p {
+        padding-top: 10%;
+    }
+    
+    .table-card {
+        height: 400px;
+        width: 400px;
+        text-align: center;
+        border: 1px solid;
+        box-shadow: 10px 10px 5px lightblue;
+    }
+    
+    .table-card h3 {
+        padding-top: 10px;
+    }
+    
+    .table-card p {
+        padding-top: 5%;
+    }
+    
+    @media screen and (max-width: 800px) {
+        .column {
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            background-color: white;
+        }
+    }
+    
+    @media (min-width: 820px) {
+        .hamburger, .mobile-menu{
+            display: none;
+        }
+        .menu {
+            display: flex;
+        }
+    }
+</style>

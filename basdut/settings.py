@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'authentication',
-    'mulai_rapat'
+    'mulai_rapat',
+    'CRUMengelolaTim',
 ]
 
 MIDDLEWARE = [
