@@ -11,5 +11,4 @@ urlpatterns = [
     path('timdetail/pemilihanpemain/', pemilihan_pemain, name="pemilihan_pemain"),
     path('timdetail/pemilihanpelatih/', pemilihan_pelatih, name="pemilihan_pelatih"),
     
-    
 ]
