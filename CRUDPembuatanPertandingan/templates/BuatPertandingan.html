@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <h1>Panitia</h1>
+
+            <div class="menu">
+                <a href="#">Dashboard</a>
+                <a href="#">Rapat</a>
+                <a href="#" class="is-active">Manage Pertandingan</a>
+                <a href="#">Logout</a>
+            </div>
+
+            <button class="hamburger">
+                <span class="material-icons">menu</span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        
+    </nav>
+
+    <div class="menu">
+        <a href="#" class="is-active">Dashboard</a>
+        <a href="#">Rapat</a>
+        <a href="#">Manage Pertandingan</a>
+        <a href="#">Logout</a>
+    </div>
+
+    <table>
+        <tr>
+            <th colspan="5">List Pertandingan</td>
+        </tr>
+        <tr>
+            <th>Grup A </th>
+            <th>Action </th>
+            <th>Grup B  </th>
+            <th>Action</th>
+        </tr>
+        <tr>
+            <td>A vs B</td>
+            <td>
+                <input type="Update" class="btn" value="Update">
+                <input type="Delete" class="btn" value="Delete">
+            </td>
+            <td>I vs J </td>
+            <td>
+                <input type="Update" class="btn" value="Update">
+                <input type="Delete" class="btn" value="Delete">
+            </td>
+        </tr>
+        <tr>
+            <td>C vs D</td>
+            <td>
+                <input type="Update" class="btn" value="Update">
+                <input type="Delete" class="btn" value="Delete">
+            </td>
+            <td>K vs L </td>
+            <td>
+                <input type="Update" class="btn" value="Update">
+                <input type="Delete" class="btn" value="Delete">
+            </td>
+        </tr>
+        <tr>
+            <td>E vs F</td>
+            <td>
+                <input type="Update" class="btn" value="Update">
+                <input type="Delete" class="btn" value="Delete">
+            </td>
+            <td>M vs N </td>
+            <td>
+                <input type="Update" class="btn" value="Update">
+                <input type="Delete" class="btn" value="Delete">
+            </td>
+        </tr>
+        <tr>
+            <td>G vs H</td>
+            <td>
+                <input type="Update" class="btn" value="Update">
+                <input type="Delete" class="btn" value="Delete">
+            </td>
+            <td>? vs ? </td>
+            <td>
+                <input type="add" class="btn" value="add">
+            </td>
+        </tr>
+        <tr>
+            <td>Grup C</td>
+            <td>
+                Action 
+            </td>
+            <td>Grup D </td>
+            <td>
+                Action
+            </td>
+        </tr>
+        <tr>
+            <td>? vs ?</td>
+            <td>
+                <!-- <input type="add" class="btn" value="add"> -->
+                <button><a href="{% url 'CRUDPemilihanStadium:show_list_stadium'%}">Add</a></button>
+            </td>
+            <td>? vs ? </td>
+            <td>
+                <!-- <input type="add" class="btn" value="add"> -->
+                <button><a href="{% url 'CRUDPemilihanStadium:show_list_stadium'%}">Add</a></button>
+            </td>
+        </tr>
+      </table>
+
+    <script src="main.js"></script>
+</body>
+</html>
