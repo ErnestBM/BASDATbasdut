@@ -46,4 +46,3 @@ def query(query_str: str):
 
 
     return hasil
-	

@@ -37,14 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-<<<<<<< HEAD
     'CRDMulaiPertandingan',
     'RManagePertandingan',
     'CRUDPembuatanPertandingan',
-=======
     'authentication',
     'mulai_rapat'
->>>>>>> b901deae7205c13bb35304737cc35d432220d7e9
 ]
 
 MIDDLEWARE = [

@@ -9,5 +9,5 @@ urlpatterns = [
     path('createNextPertandingan/',views.createNextPertandingan,name='createNextPertandingan'),
     path('endPertandingan/',views.endPertandingan,name='endPertandingan'),
     path('updatePertandingan/',views.updatePertandingan,name='updatePertandingan'),
-    path('panggilPeristiwa/<str : id>',views.panggilPeristiwa,name='panggilPeristiwa'),
+    path('panggilPeristiwa/',views.panggilPeristiwa,name='panggilPeristiwa'),
 ]

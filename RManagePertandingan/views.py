@@ -46,7 +46,7 @@ def endPertandingan(request):
 # def listPeristiwa(request):
 #     return render(request, 'ListPeristiwa.html')
 
-def panggilPeristiwa(request, id):
+def panggilPeristiwa(request):
 
         queryPeristiwa = """
             select concat(P.nama_depan, ' ', P.nama_belakang) as nama, E.jenis
@@ -61,11 +61,3 @@ def panggilPeristiwa(request, id):
         print(response)
         return render(request, 'ListPeristiwa.html', context)
         
-    # elif request.method == 'POST' :
-    #     id_pelatih = '841be0cc-9587-4164-b6eb-75cac8e62f17' # request.session['id_pelatih']
-    #     id_atlet = request.POST['id_atlet']
-       
-
-    #     response = {'data': data}
-    #     print(response)
-    #     return redirect('pink:r_latih_atlet')
