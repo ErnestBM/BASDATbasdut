@@ -12,5 +12,8 @@ urlpatterns = [
     path('register/lain/', show_register_lain, name='register_lain'),
     path('register/lain/submit/', register_lain, name='register_lain_submit'),
     path('register/panitia/submit/', register_panitia, name='register_panitia_submit'),
+    # path('dashboard-panitia', show_dashboard_panitia, name='dashboard_panitia'),
+    # path('dashboard-penonton', show_dashboard_penonton, name='dashboard_penonton'),
+    # path('dashboard-manajer', show_dashboard_manajer, name='dashboard_manajer'),
     path('logout/', logout, name='logout'),
 ]
