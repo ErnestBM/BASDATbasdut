@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <h1>Panitia</h1>
+
+            <div class="menu">
+                <a href="#">Dashboard</a>
+                <a href="#">Rapat</a>
+                <a href="#"class="is-active">Manage Pertandingan</a>
+                <a href="#">Logout</a>
+            </div>
+
+            <button class="hamburger">
+                <span class="material-icons">menu</span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+    </nav>
+
+    <div class="menu">
+        <a href="#" class="is-active">Dashboard</a>
+        <a href="#">Rapat</a>
+        <a href="#">Manage Pertandingan</a>
+        <a href="#">Logout</a>
+    </div>
+
+    <table>
+        <tr>
+            <th colspan="4">List Pertandingan Grup Stage</td>
+        </tr>
+        <tr>
+            <th>Tim</th>
+            <th>Waktu</th>
+            <th>Pemenang</th>
+            <th>Action</th>
+        </tr>
+        <tr>
+        </tr>
+        { % if update_pertandingan % }
+        
+        {% for update in update_pertandingan %}
+        <tr>
+            <td>
+                {{ update.tim_bertanding }}
+                
+            </td>
+            <td>
+                {{ update.tanggal }}
+            </td>
+            <td>
+                -
+            </td>
+            <td><a class="laporan-button" href="{% url 'RManagePertandingan:panggilPeristiwa'  %}">Update</a>  </td>
+        </tr>
+        {% endfor %}
+        { % endif % }
+            
+    </table>
+
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>
