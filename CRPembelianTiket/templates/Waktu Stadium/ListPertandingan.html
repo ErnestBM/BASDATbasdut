@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Pertandingan</title>
+
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <h1>List Pertandingan</h1>
+
+            <div class="menu">
+                <a href="#">Dashboard</a>
+                <a href="#">Pembelian Tiket</a>
+                <a href="#">List Pertandingan</a>
+                <a href="{% url 'logout'  %}">Logout</a>
+            </div>
+
+            <button class="hamburger">
+                <span class="material-icons">menu</span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+    </nav>
+
+    <div class="menu">
+        <a href="#">Dashboard</a>
+        <a href="#">Pembelian Tiket</a>
+        <a href="#">List Pertandingan</a>
+        <a href="{% url 'logout'  %}">Logout</a>
+    </div>
+
+    <table>
+        <tr>
+            <th>Tim 1</th>
+            <th>Tim 2</th>
+            <th>Action</th>
+        </tr>
+        {% for item in data %}
+        <tr>
+            <td>{{ item.0 }}</td>
+            <td>{{ item.1 }}</td>
+            <td>{{ item.2 }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

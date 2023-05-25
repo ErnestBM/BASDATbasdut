@@ -1,0 +1,99 @@
+:root {
+    --primary: #8c38ff;
+    --light: #EEEEEE;
+    --dark: #212121;
+}
+*{
+    margin: 20;
+    padding: 30;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+body{
+    width: 100%;
+    background: #f3f3f4;
+}
+
+.container{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    max-width: 530px;
+    max-height: 800px;
+    width:80%;
+    height: 20%;
+    background:#8c38ff;
+    border-radius: 0px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+}
+
+.container .registration{
+    display: none;
+}
+
+#check:checked ~ .registration{
+    display:block;
+}
+#check:checked ~ .login{
+    display: none;
+}
+
+#check{
+    display:none;
+}
+
+.container .form{
+    padding:2rem;
+}
+
+.form header{
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom:1.5rem;
+}
+
+.form input{
+    height:60px;
+    width:100%;
+    padding: 0 15px;
+    font-size:17px;
+    margin-bottom: 1.3 rem;
+    border: 1px solid #dddd;
+    border-radius: 6px;
+    outline:none;
+}
+
+.form input:focus{
+    box-shadow: 0 qpx 0 rgba(0,0,0,0.3);
+}
+
+.form a{
+    font-size:16px;
+    color:#8c38ff;
+    text-decoration: none;
+}
+
+.form a:hover{
+    text-decoration: underline;
+
+}
+
+.form input .button{
+    color:#f3f3f4;
+    background: #8c38ff;
+    font: size 1.2rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-top: 1.7rem;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.form input .button:hover{
+    background: #8c38ff;
+
+}
