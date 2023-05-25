@@ -7,7 +7,7 @@ import psycopg2
 # import query
 # Create your views here.
 
-def connect(request):
+def connect():
     connection = psycopg2.connect(user="postgres",
                         password="HbBv4Y89Ou3MOwHziV4Z",
                         host="containers-us-west-97.railway.app",
@@ -15,12 +15,12 @@ def connect(request):
                         database="railway")
     return connection
 
-def get_Manajer(request, string):
+def get_Manajer(request):
     
-    connection = connect(request)
+    connection = connect()
     cursor = connection.cursor()
     
-    username = string
+    username = request.session.get('username')
     
     cursor.execute(f"SELECT id_manajer FROM MANAJER WHERE username = '{username}'") 
     result = cursor.fetchall()
@@ -38,14 +38,14 @@ def show_tim_form(request):
     return render(request, "TimRegis/TimRegis.html")
 
 def show_dashboard_manajer(request):
-    return render(request)
+    return render(request, 'DashboardManager/DarhBoard.html')
         
 
 def register_tim(request):
-    connection = connect(request)
+    connection = connect()
     cursor = connection.cursor()
     
-    manajer_data = get_Manajer(request, request.session.get('username'))
+    manajer_data = get_Manajer(request)
     
     id_manajer = manajer_data[0]
     print(id_manajer)
@@ -74,10 +74,10 @@ def register_tim(request):
         
 
 def get_pemain_pelatih(request):
-    connection = connect(request)
+    connection = connect()
     cursor = connection.cursor()
         
-    manajer_data = get_Manajer(request, request.session.get('username'))
+    manajer_data = get_Manajer(request)
     id_manajer = manajer_data[0]
     nama_tim = manajer_data[1]
     cursor.execute(f"""
